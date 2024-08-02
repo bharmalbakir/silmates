@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_product_template_form_custom" model="ir.ui.view">
+            <field name="name">product.template.form.custom</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_tooltip']" position="after">
+                    <field name="part_number"/>
+                </xpath>
+                <xpath expr="//field[@name='part_number']" position="after">
+                    <field name="location"/>
+                </xpath>
+                <xpath expr="//field[@name='location']" position="after">
+                    <field name="hsn_code"/>
+                </xpath>
+                <xpath expr="//field[@name='hsn_code']" position="after">
+                    <field name="hsn_desc"/>
+                </xpath>
+                <xpath expr="//field[@name='hsn_desc']" position="after">
+                    <field name="issued_qty"/>
+                </xpath>
+                <xpath expr="//field[@name='issued_qty']" position="after">
+                    <field name="sub_qty"/>
+                </xpath>
+                <xpath expr="//field[@name='sub_qty']" position="after">
+                    <field name="total_qty"/>
+                </xpath>
+
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="sub_category"/>
+                </xpath>
+
+
+
+                <xpath expr="//notebook" position="inside">
+                    <page string="Product Info">
+                        <group>
+                            <group>
+                                <field name="resistance"/>
+                                <field name="package"/>
+                                <!--                                <field name="sub_category"/>-->
+                                <field name="power_rating"/>
+                                <field name="tolerance"/>
+                                <field name="watts"/>
+                                <!--                                <field name="issued_qty"/>-->
+                                <!--                                <field name="total_qty"/>-->
+                                <field name="value"/>
+                                <field name="output_current"/>
+                                <field name="output_voltage"/>
+                                <field name="vol_type"/>
+                                <field name="min_vlt"/>
+                                <field name="max_vlt"/>
+                                <field name="load_capaci"/>
+                                <field name="no_of_position"/>
+                                <field name="pitch"/>
+                                <field name="dsv"/>
+                                <field name="vgs"/>
+                                <field name="cc_m"/>
+
+                            </group>
+                            <group>
+
+                                <field name="temp_coefficient"/>
+                                <field name="min_oper_temp"/>
+                                <field name="max_oper_temp"/>
+                                <field name="voltage_rating"/>
+                                <field name="manufacturer"/>
+                                <field name="supplier"/>
+                                <field name="remark"/>
+                                <field name="forward_voltage"/>
+                                <field name="breakdown_voltage"/>
+                                <field name="rev_voltage"/>
+                                <field name="forward_current"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_product_template_tree_custom" model="ir.ui.view">
+            <field name="name">product.template.tree.custom</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='default_code']" position="replace">
+                    <field name="part_number" string="Part Number" optional="show" on_change="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+<!--        <menuitem id ="confirmation_wiz"-->
+<!--                  name="Confirmation"-->
+<!--                  action="action_confirmation"/>-->
+    </data>
+</odoo>

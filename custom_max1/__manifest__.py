@@ -1,0 +1,17 @@
+{
+    'name': 'custom_max',
+    'version': '17.0',
+    'license': 'LGPL-3',
+    'category': 'BOM',
+    'sequence': -500,
+    'summary': 'Manage orders and sales orders',
+    'depends': ['base', 'mass_mailing','mail','product', 'mrp', 'purchase', 'account'],
+    'data': ['view/po_wizard_conf.xml',
+             'view/history_button.xml',
+             'view/product_template_views.xml',
+             'view/product_search.xml',
+             'view/vendor_nme.xml'],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}
